@@ -1,0 +1,14 @@
+{
+  "name": "catalogo-cotizaciones",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "build": "node scripts/build.js",
+    "lint": "node scripts/lint.js",
+    "test": "node --test"
+  }
+}

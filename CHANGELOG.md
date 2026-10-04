@@ -1,0 +1,13 @@
+# Changelog
+
+## [1.0.0] - 2026-10-04
+
+### Primer MVP
+
+- Catálogo responsive con seis productos de ejemplo e ilustraciones SVG locales.
+- Búsqueda, categorías y selección de varios productos con cantidades.
+- Formulario de cotización validado en cliente y servidor.
+- Guardado local de solicitudes y confirmación con folio.
+- API y adaptador de almacenamiento preparados para futuras integraciones.
+- Pruebas de integración, chequeo de sintaxis y build de recursos.
+- README y estado de proyecto con instrucciones y limitaciones reales.
