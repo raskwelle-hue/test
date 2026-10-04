@@ -1,3 +1,4 @@
+import { mountDemo } from './demo.js';
 const $ = selector => document.querySelector(selector);
 let products = [];
 const selected = new Map();
@@ -54,5 +55,9 @@ $('#quote-form').addEventListener('submit', async event => {
   finally { sending = false; $('.submit').disabled = false; renderSelection(); renderProducts(); }
 });
 renderSelection();
-try { const response = await fetch('/api/products'); if (!response.ok) throw new Error(); products = await response.json(); renderProducts(); }
+try {
+  const response = await fetch('/api/products'); if (!response.ok) throw new Error();
+  products = await response.json(); renderProducts();
+  if (new URLSearchParams(location.search).get('demo') === '1') mountDemo({ products, selected, renderProducts, renderSelection, showForm, isSending: () => sending });
+}
 catch { $('#catalog-status').textContent = 'No pudimos cargar el catálogo. Recarga la página para intentar de nuevo.'; }

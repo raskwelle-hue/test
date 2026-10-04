@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0] - 2026-10-04
+
+- Presentación para inversionistas en `/demo.html` con propuesta de valor y alcance real.
+- Recorrido interactivo del catálogo en `/?demo=1` con precarga de datos ficticios y reinicio.
+- Cotización de demo con la misma API y confirmación del MVP, sin envíos automáticos.
+- Enlace desde el catálogo, documentación del recorrido y prueba HTTP de la demo.
+
 ## [1.0.0] - 2026-10-04
 
 ### Primer MVP

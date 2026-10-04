@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Actualizado: 2026-10-04. Versión: MVP 1.0.0.
+Actualizado: 2026-10-04. Versión: MVP 1.1.0 con demo para inversionistas.
 
 ## Objetivo
 
@@ -18,13 +18,15 @@ Crear un catálogo de productos para clientes que puedan seleccionar uno o vario
 - Código separado en catálogo, validación, adaptador de persistencia, API y presentación.
 - README con instalación, arranque, build, verificaciones y límites; changelog del primer MVP.
 - Git existente con rama `main` y remoto `https://github.com/raskwelle-hue/test.git`.
+- Demo para inversionistas en `/demo.html`: propuesta de valor, recorrido y distinción entre funciones actuales y próximas etapas.
+- Modo interactivo `/?demo=1` con controles para precargar un ejemplo ficticio (tres productos, ocho unidades) y reiniciar el recorrido. El envío utiliza la API real y el ejemplo se identifica como demo en comentarios.
 
 ## Verificación
 
 - `npm ci`: instalación reproducible sin dependencias externas.
 - `npm start`: arranca y sirve la página en http://localhost:3000.
 - `npm run lint`: sintaxis JavaScript válida (chequeo básico, no ESLint).
-- `npm test`: cinco pruebas de integración aprobadas. Verifican catálogo e imágenes, múltiples productos persistidos, rechazo de datos inválidos, fallo de almacenamiento, JSON malformado y límite de tamaño.
+- `npm test`: seis pruebas de integración aprobadas. Verifican catálogo e imágenes, página y recursos de demo, múltiples productos persistidos, rechazo de datos inválidos, fallo de almacenamiento, JSON malformado y límite de tamaño.
 - `npm run build`: copia de recursos a `dist/` correcta. La API sigue requiriendo Node.js.
 - Verificación HTTP de arranque y recursos realizada. No se pudo hacer revisión visual ni interacción real en navegador: el entorno no tiene un navegador conectado. Queda pendiente comprobar manualmente escritorio y móvil siguiendo el README.
 
@@ -46,6 +48,7 @@ Crear un catálogo de productos para clientes que puedan seleccionar uno o vario
 - No hay precios, carrito de compra, cobros ni integraciones externas.
 - Servidor ligado a localhost; el despliegue debe definir explícitamente cómo exponerlo.
 - No se persiste el borrador del cliente en almacenamiento del navegador; recargar pierde la selección.
+- La demo precarga datos únicamente por acción explícita del presentador y guarda una solicitud solo al enviar. Reiniciar no borra archivos guardados. No se presentan cifras de ventas, clientes o tracción como evidencia.
 
 ## Próximos pasos recomendados
 
@@ -61,4 +64,4 @@ Crear un catálogo de productos para clientes que puedan seleccionar uno o vario
 - Build sin empaquetado/minificación; apropiado para este MVP pequeño.
 - Revisión visual y pruebas reales del formulario pendientes por falta de navegador disponible en el entorno.
 
-Este archivo describe el estado antes del commit inicial. El SHA y la publicación en GitHub se verifican después del commit; consulta el historial de Git para el resultado definitivo.
+El MVP inicial se publicó en `main` con commit `b838cc63afbcb4ace1f299d3d127b6d33af3afda`. Este estado incluye la demo para inversionistas; consulta el historial de Git para su commit y publicación definitiva.

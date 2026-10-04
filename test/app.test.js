@@ -23,6 +23,15 @@ test('sirve página, catálogo e imágenes locales', async t => {
   for (const p of products) assert.equal((await fetch(url + p.image)).status, 200);
   assert.equal((await fetch(url + '/data/quotes/anything.json')).status, 404);
 });
+test('sirve presentación de inversionistas y recursos de demo con la misma API', async t => {
+  const { url } = await fixture(t);
+  const presentation = await fetch(url + '/demo.html');
+  assert.equal(presentation.status, 200);
+  const html = await presentation.text();
+  assert.match(html, /href="\/\?demo=1"/);
+  assert.match(html, /AÚN NO IMPLEMENTADA/);
+  for (const path of ['/demo.js', '/demo.css', '/?demo=1']) assert.equal((await fetch(url + path)).status, 200);
+});
 test('guarda varios productos y devuelve folio después de persistir', async t => {
   const { post, directory } = await fixture(t);
   const response = await post(valid); assert.equal(response.status, 201);

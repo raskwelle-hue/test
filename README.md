@@ -58,6 +58,18 @@ npm run build
 
 La confirmación significa que se guardó en el servidor, **no que se envió un email**. Un error conserva la selección y los datos para intentar nuevamente. No hay un endpoint público para leer las solicitudes.
 
+## Demo para inversionistas
+
+Con `npm start` en ejecución, abre **http://localhost:3000/demo.html**. También hay un enlace en el pie del catálogo.
+
+1. La presentación explica la propuesta de valor, el recorrido del cliente y el alcance real del MVP.
+2. Pulsa **Probar la demo interactiva** para abrir `/?demo=1`.
+3. Explora el catálogo y pulsa **Preparar ejemplo**. Se cargan tres productos (ocho unidades) y un contacto ficticio `demo@example.com`. Puedes modificar productos, cantidades y datos.
+4. Pulsa **Enviar solicitud**. Se utiliza la misma API del MVP y se guarda una solicitud real de prueba con un comentario que la identifica como demo. La confirmación muestra el folio; no envía emails.
+5. **Reiniciar** limpia el formulario y la selección para repetir la presentación. No elimina solicitudes guardadas.
+
+La demo no envía automáticamente al precargar datos, no incluye métricas comerciales inventadas y distingue las funciones actuales de las próximas integraciones.
+
 ## Estructura principal
 
 ```text
@@ -65,6 +77,9 @@ public/
   index.html           Página y formulario accesible
   styles.css           Diseño responsive
   app.js               Catálogo, selección y envío
+  demo.html            Presentación para inversionistas
+  demo.js              Controles y precarga del recorrido
+  demo.css             Diseño de presentación y controles
   images/              Ilustraciones SVG locales
 server/
   index.js             Arranque y puerto
